@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificate - SkillLearn</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #fdf6e3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .certificate {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 40px;
+      border: 10px solid #4caf50;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 48px;
+      color: #4caf50;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 32px;
+      margin: 10px 0;
+    }
+    .name {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #333;
+    }
+    .details {
+      font-size: 20px;
+      margin: 10px 0;
+      color: #555;
+    }
+    .date {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #888;
+    }
+    .input-name {
+      margin-top: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 300px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="certificate">
+    <h1>Certificate of Completion</h1>
+    <h2>This certifies that</h2>
+
+    <div class="input-name" id="nameSection">
+      <input type="text" id="studentName" placeholder="Enter your name"/><br>
+      <input type="text" id="courseName" placeholder="Enter course name"/><br>
+      <button onclick="generateCertificate()">Generate Certificate</button>
+    </div>
+
+    <div class="name" id="displayName" style="display:none;"></div>
+
+    <div class="details" id="detailsSection" style="display:none;">
+      has successfully completed the lesson<br>
+      <strong id="displayCourse"></strong><br>
+      <span id="scoreText"></span>
+    </div>
+
+    <div class="date" id="dateSection" style="display:none;"></div>
+  </div>
+
+  <script>
+    function generateCertificate() {
+      const name = document.getElementById('studentName').value.trim();
+      const course = document.getElementById('courseName').value.trim();
+
+      if (name === '' || course === '') {
+        alert("Please enter both your name and the course name.");
+        return;
+      }
+
+      // Get score from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = urlParams.get('score');
+
+      // Set content
+      document.getElementById('displayName').innerText = name;
+      document.getElementById('displayCourse').innerText = "${course}";
+
+      // Show sections
+      document.getElementById('displayName').style.display = 'block';
+      document.getElementById('detailsSection').style.display = 'block';
+      document.getElementById('dateSection').style.display = 'block';
+      document.getElementById('nameSection').style.display = 'none';
+
+      // Score
+      if (score !== null) {
+        document.getElementById('scoreText').innerText = with a score of ${score}/5.;
+      }
+
+      // Today's date
+      const today = new Date();
+      const dateStr = today.toLocaleDateString('en-IN', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('dateSection').innerText = Date: ${dateStr};
+    }
+  </script>
+
+</body>
+</html>
