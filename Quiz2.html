@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Excel Basics Quiz - SkillLearn</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 25px;
+    }
+    .question p {
+      font-weight: bold;
+    }
+    .options label {
+      display: block;
+      margin: 5px 0;
+    }
+    button {
+      background: #4caf50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Excel Basics Quiz</h1>
+    <p>Test your knowledge after the lesson</p>
+  </header>
+
+  <div class="container">
+    <form id="quizForm">
+      <div class="question">
+        <p>1. What symbol is used to start a formula in Excel?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="a" required> A. #</label>
+          <label><input type="radio" name="q1" value="b"> B. =</label>
+          <label><input type="radio" name="q1" value="c"> C. @</label>
+          <label><input type="radio" name="q1" value="d"> D. $</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>2. Which function calculates the average of numbers?</p>
+        <div class="options">
+          <label><input type="radio" name="q2" value="a" required> A. =TOTAL()</label>
+          <label><input type="radio" name="q2" value="b"> B. =SUM()</label>
+          <label><input type="radio" name="q2" value="c"> C. =AVERAGE()</label>
+          <label><input type="radio" name="q2" value="d"> D. =COUNT()</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>3. What does the Fill Handle in Excel do?</p>
+        <div class="options">
+          <label><input type="radio" name="q3" value="a" required> A. Deletes data</label>
+          <label><input type="radio" name="q3" value="b"> B. Copies formulas or data to adjacent cells</label>
+          <label><input type="radio" name="q3" value="c"> C. Fills background color</label>
+          <label><input type="radio" name="q3" value="d"> D. Formats text</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>4. Which chart is best for showing trends over time?</p>
+        <div class="options">
+          <label><input type="radio" name="q4" value="a" required> A. Pie Chart</label>
+          <label><input type="radio" name="q4" value="b"> B. Line Chart</label>
+          <label><input type="radio" name="q4" value="c"> C. Bar Chart</label>
+          <label><input type="radio" name="q4" value="d"> D. Scatter Chart</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <p>5. What is the shortcut to save a workbook in Excel?</p>
+        <div class="options">
+          <label><input type="radio" name="q5" value="a" required> A. Ctrl + S</label>
+          <label><input type="radio" name="q5" value="b"> B. Ctrl + C</label>
+          <label><input type="radio" name="q5" value="c"> C. Ctrl + V</label>
+          <label><input type="radio" name="q5" value="d"> D. Ctrl + Z</label>
+        </div>
+      </div>
+
+      <button type="submit">Submit Quiz</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const answers = {
+        q1: "b", // =
+        q2: "c", // =AVERAGE()
+        q3: "b", // Fill Handle copies formulas
+        q4: "b", // Line chart
+        q5: "a"  // Ctrl + S
+      };
+
+      let score = 0;
+
+      for (let key in answers) {
+        const selected = document.querySelector(input[name="${key}"]:checked);
+        if (selected && selected.value === answers[key]) {
+          score++;
+        }
+      }
+
+      // Redirect to certificate page with score
+      const studentName = prompt("Enter your name for the certificate:");
+      if (studentName) {
+        window.location.href = certificate.html?name=${encodeURIComponent(studentName)}&score=${score};
+      }
+    });
+  </script>
+
+</body>
+</html>
