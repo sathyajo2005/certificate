@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillLearn - Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f2f2;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+    .btn {
+      margin-top: 15px;
+      display: inline-block;
+      background: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to SkillLearn</h1>
+    <p>Learn skills and earn micro-certificates</p>
+  </header>
+
+  <div class="container">
+    <div class="grid">
+
+      <!-- JavaScript Basics Card -->
+      <div class="card">
+        <h3>JavaScript Basics</h3>
+        <p>Start learning the fundamentals of JavaScript for web development.</p>
+        <a class="btn" href="lesson.html?lesson=js-basics">Start Lesson</a>
+      </div>
+
+      <!-- Excel Basics Card -->
+      <div class="card">
+        <h3>Excel Basics</h3>
+        <p>Learn how to use Excel formulas, functions, and spreadsheets effectively.</p>
+        <a class="btn" href="lesson2.html?lesson=excel-basics">Start Lesson</a>
+      </div>
+
+      <!-- Resume Writing Card -->
+      <div class="card">
+        <h3>Resume Writing</h3>
+        <p>Learn to write effective, professional resumes that get you interviews.</p>
+        <a class="btn" href="lesson3.html?lesson=resume-writing">Start Lesson</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
