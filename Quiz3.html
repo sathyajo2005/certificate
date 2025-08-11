@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Writing Quiz - SkillLearn</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4caf50;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    button {
+      padding: 12px 25px;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #388e3c;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Resume Writing Quiz</h1>
+    <p>Test your knowledge of effective resume writing techniques</p>
+  </header>
+
+  <div class="container">
+    <form id="quizForm">
+      
+      <div class="question">
+        <p>1. What is the main purpose of a resume?</p>
+        <label><input type="radio" name="q1" value="a"> To provide detailed life history</label>
+        <label><input type="radio" name="q1" value="b"> To entertain the recruiter</label>
+        <label><input type="radio" name="q1" value="c"> To showcase your skills and qualifications</label>
+        <label><input type="radio" name="q1" value="d"> To replace the interview process</label>
+      </div>
+
+      <div class="question">
+        <p>2. Which of the following is NOT a common resume format?</p>
+        <label><input type="radio" name="q2" value="a"> Chronological</label>
+        <label><input type="radio" name="q2" value="b"> Functional</label>
+        <label><input type="radio" name="q2" value="c"> Circular</label>
+        <label><input type="radio" name="q2" value="d"> Combination</label>
+      </div>
+
+      <div class="question">
+        <p>3. What section of a resume typically comes first?</p>
+        <label><input type="radio" name="q3" value="a"> Hobbies</label>
+        <label><input type="radio" name="q3" value="b"> Contact Information</label>
+        <label><input type="radio" name="q3" value="c"> References</label>
+        <label><input type="radio" name="q3" value="d"> Salary Expectations</label>
+      </div>
+
+      <div class="question">
+        <p>4. What’s a good tip for writing bullet points in the experience section?</p>
+        <label><input type="radio" name="q4" value="a"> Use full paragraphs</label>
+        <label><input type="radio" name="q4" value="b"> Include measurable achievements</label>
+        <label><input type="radio" name="q4" value="c"> List all job responsibilities</label>
+        <label><input type="radio" name="q4" value="d"> Write in passive voice</label>
+      </div>
+
+      <div class="question">
+        <p>5. Which one is recommended in a professional resume?</p>
+        <label><input type="radio" name="q5" value="a"> Use colorful fonts</label>
+        <label><input type="radio" name="q5" value="b"> Include a clear, readable layout</label>
+        <label><input type="radio" name="q5" value="c"> Add memes</label>
+        <label><input type="radio" name="q5" value="d"> Handwrite the content</label>
+      </div>
+
+      <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+      <div id="result"></div>
+    </form>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      const answers = {
+        q1: 'c',
+        q2: 'c',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+      };
+
+      let score = 0;
+      let total = Object.keys(answers).length;
+
+      for (let q in answers) {
+        let selected = document.querySelector(input[name="${q}"]:checked);
+        if (selected && selected.value === answers[q]) {
+          score++;
+        }
+      }
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = You scored ${score} out of ${total}.;
+
+      if (score === total) {
+        resultDiv.innerHTML += <br>🎉 Excellent! You're ready to write a resume! <br><a href="certificate.html?lesson=resume-writing&score=${score}" style="color:green; font-weight:bold;">Get your Certificate</a>;
+      }
+    }
+  </script>
+
+</body>
+</html>
